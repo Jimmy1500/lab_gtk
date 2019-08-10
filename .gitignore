@@ -4,6 +4,10 @@
 *.out
 tags
 
+# Build directory
+build
+cmake-build
+
 # Prerequisites
 *.d
 
