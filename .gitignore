@@ -1,3 +1,9 @@
+# Buffer files
+*.swp
+*.vim
+*.out
+tags
+
 # Prerequisites
 *.d
 
