@@ -1,2 +1,2 @@
-# lab_gtk
-GTK development playground
+# lab_gtk3
+GTK 3.0 development playground
