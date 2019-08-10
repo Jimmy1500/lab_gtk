@@ -1,5 +1,5 @@
 # Set the name and the supported language of the project
-PROJECT(hello C)
+PROJECT(galc C)
 # Set the minimum version of cmake required to build this project
 CMAKE_MINIMUM_REQUIRED(VERSION 3.10.2)
 
@@ -15,14 +15,14 @@ LINK_DIRECTORIES(${GTK3_LIBRARY_DIRS})
 # Add other flags to the compiler
 ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
 
-# Add an executable compiled from hello.c
+# Add an executable compiled from galc.c
 file(GLOB SOURCES "src/*.c")
-ADD_EXECUTABLE(hello ${SOURCES})
+ADD_EXECUTABLE(galc ${SOURCES})
 
 # Link the target to the GTK+ libraries
-TARGET_LINK_LIBRARIES(hello ${GTK3_LIBRARIES})
+TARGET_LINK_LIBRARIES(galc ${GTK3_LIBRARIES})
 
 # PHONY TARGETS
-add_custom_target(run hello)
-add_custom_target(memcheck memcheck "./hello")
+add_custom_target(run galc)
+add_custom_target(memcheck memcheck "./galc")
 
