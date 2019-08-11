@@ -16,13 +16,12 @@ LINK_DIRECTORIES(${GTK3_LIBRARY_DIRS})
 ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
 
 # Add an executable compiled from galc.c
-file(GLOB SOURCES "src/*.c")
+FILE(GLOB SOURCES "src/*.c")
 ADD_EXECUTABLE(galc ${SOURCES})
 
 # Link the target to the GTK+ libraries
 TARGET_LINK_LIBRARIES(galc ${GTK3_LIBRARIES})
 
 # PHONY TARGETS
-add_custom_target(run galc)
-add_custom_target(memcheck memcheck "./galc")
-
+ADD_CUSTOM_TARGET(run galc)
+ADD_CUSTOM_TARGET(memcheck memcheck "./galc")
