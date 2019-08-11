@@ -48,7 +48,7 @@ static void configure_g2pp(double a, double b, double s1, double s2, double ro)
     }
 }
 
-static void do_calculate (GtkWidget *widget, gpointer data) {
+static void calculate (GtkWidget *widget, gpointer data) {
     double alpha = atof((char *) gtk_entry_get_text (GTK_ENTRY(entry_alpha)));
     double beta = atof((char *) gtk_entry_get_text (GTK_ENTRY(entry_beta)));
     double sigma1 = atof((char *) gtk_entry_get_text (GTK_ENTRY(entry_sigma1)));
@@ -76,7 +76,7 @@ static void reset_g2pp() {
     g_print ("resetting...Done\n");
 }
 
-static void do_calibrate (GtkWidget *widget, gpointer data) { g_print ("Calibrating...Done\n"); }
+static void calibrate (GtkWidget *widget, gpointer data) { g_print ("Calibrating...Done\n"); }
 
 int main (int argc, char **argv)
 {
@@ -100,10 +100,10 @@ int main (int argc, char **argv)
     g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
     GObject *button_cali = gtk_builder_get_object (builder, "button_calibrate");
-    g_signal_connect (button_cali, "clicked", G_CALLBACK (do_calibrate), NULL);
+    g_signal_connect (button_cali, "clicked", G_CALLBACK (calibrate), NULL);
 
     GObject *button_calc = gtk_builder_get_object (builder, "button_calculate");
-    g_signal_connect (button_calc, "clicked", G_CALLBACK (do_calculate), NULL);
+    g_signal_connect (button_calc, "clicked", G_CALLBACK (calculate), NULL);
 
     GObject *button_reset = gtk_builder_get_object (builder, "button_reset");
     g_signal_connect (button_reset, "clicked", G_CALLBACK (reset_g2pp), NULL);
