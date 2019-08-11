@@ -7,7 +7,7 @@
       <object id="grid" class="GtkGrid">
         <property name="visible">True</property>
         <child>
-            <object id="ZCBP" class="GtkLabel">
+            <object id="zcbp" class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="label">ZCBP</property>
             </object>
@@ -17,7 +17,7 @@
             </packing>
         </child>
         <child>
-            <object id="t" class="GtkLabel">
+            <object id="lable_stl" class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="label">t</property>
             </object>
@@ -27,7 +27,7 @@
             </packing>
         </child>
         <child>
-            <object id="T" class="GtkLabel">
+            <object id="label_mat" class="GtkLabel">
                 <property name="visible">True</property>
                 <property name="label">T</property>
             </object>
@@ -56,7 +56,7 @@
             </packing>
         </child>
         <child>
-            <object id="entry_t" class="GtkEntry">
+            <object id="entry_stl" class="GtkEntry">
                 <property name="visible">True</property>
             </object>
             <packing>
@@ -65,7 +65,7 @@
             </packing>
         </child>
         <child>
-            <object id="entry_T" class="GtkEntry">
+            <object id="entry_mat" class="GtkEntry">
                 <property name="visible">True</property>
             </object>
             <packing>
@@ -191,12 +191,23 @@
             </packing>
         </child>
         <child>
-            <object id="quit" class="GtkButton">
+            <object id="button_reset" class="GtkButton">
+                <property name="visible">True</property>
+                <property name="label">Reset</property>
+            </object>
+            <packing>
+                <property name="left-attach">1</property>
+                <property name="top-attach">4</property>
+                <property name="width">1</property>
+            </packing>
+        </child>
+        <child>
+            <object id="button_quit" class="GtkButton">
                 <property name="visible">True</property>
                 <property name="label">Quit</property>
             </object>
             <packing>
-                <property name="left-attach">2</property>
+                <property name="left-attach">3</property>
                 <property name="top-attach">4</property>
                 <property name="width">1</property>
             </packing>
