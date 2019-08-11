@@ -14,12 +14,12 @@ GtkWidget *entry_rho;
 
 GtkWidget *entry_zcbp;
 
-static void * new_g2pp() {
+static G2PP * new_g2pp() {
     return new G2PP();
 }
 
-static void delete_g2pp(void * ptr) {
-    delete static_cast<G2PP *>(ptr);
+static void delete_g2pp(G2PP * ptr) {
+    delete ptr;
 }
 
 static void do_calibrate (GtkWidget *widget, gpointer data) { g_print ("Calibrating...Done\n"); }
