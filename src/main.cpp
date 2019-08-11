@@ -47,16 +47,7 @@ static void configure_g2pp(double a, double b, double s1, double s2, double ro)
         g_print ("configuring...Done\n");
     }
 }
-static void reset_g2pp() {
-    g_print ("resetting...\n");
-    g2pp_ptr->clearSimulation();
-    char result_buffer[1];
-    snprintf(result_buffer, sizeof(result_buffer), "%s", "");
-    gtk_entry_set_text(GTK_ENTRY(entry_zcbp), result_buffer);
-    g_print ("resetting...Done\n");
-}
 
-static void do_calibrate (GtkWidget *widget, gpointer data) { g_print ("Calibrating...Done\n"); }
 static void do_calculate (GtkWidget *widget, gpointer data) {
     double alpha = atof((char *) gtk_entry_get_text (GTK_ENTRY(entry_alpha)));
     double beta = atof((char *) gtk_entry_get_text (GTK_ENTRY(entry_beta)));
@@ -75,6 +66,17 @@ static void do_calculate (GtkWidget *widget, gpointer data) {
     g_print ("calculating...Done\n");
     gtk_entry_set_text(GTK_ENTRY(entry_zcbp), result_buffer);
 }
+
+static void reset_g2pp() {
+    g_print ("resetting...\n");
+    g2pp_ptr->clearSimulation();
+    char result_buffer[1];
+    snprintf(result_buffer, sizeof(result_buffer), "%s", "");
+    gtk_entry_set_text(GTK_ENTRY(entry_zcbp), result_buffer);
+    g_print ("resetting...Done\n");
+}
+
+static void do_calibrate (GtkWidget *widget, gpointer data) { g_print ("Calibrating...Done\n"); }
 
 int main (int argc, char **argv)
 {
