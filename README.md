@@ -1,5 +1,5 @@
 # lab_gtk3
-GTK 3.0 development demo
+GTK 3.0 powered high performance interest rate calculator
 
 ## What
 Tis a interest rate calculator
