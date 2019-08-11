@@ -1,3 +1,9 @@
+#include "G2PP.h"
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include <gtk/gtk.h>
 
 GtkWidget *entry_alpha;
@@ -7,6 +13,14 @@ GtkWidget *entry_sigma2;
 GtkWidget *entry_rho;
 
 GtkWidget *entry_zcbp;
+
+static void * new_g2pp() {
+    return new G2PP();
+}
+
+static void delete_g2pp(void * ptr) {
+    delete static_cast<G2PP *>(ptr);
+}
 
 static void do_calibrate (GtkWidget *widget, gpointer data) { g_print ("Calibrating...Done\n"); }
 static void do_calculate (GtkWidget *widget, gpointer data) {
@@ -64,3 +78,6 @@ int main (int argc, char **argv)
 
   return 0;
 }
+#ifdef __cplusplus
+}
+#endif
