@@ -32,6 +32,6 @@ ADD_EXECUTABLE(galc src/main.cpp ${FILIUS_SRC}/Curve.cpp ${FILIUS_SRC}/Simulatio
 TARGET_LINK_LIBRARIES(galc ${GTK3_LIBRARIES})
 
 # PHONY TARGETS
-ADD_CUSTOM_TARGET(bd galc)
+ADD_CUSTOM_TARGET(bd make -j4)
 ADD_CUSTOM_TARGET(rn galc)
 ADD_CUSTOM_TARGET(mc memcheck "./galc")
