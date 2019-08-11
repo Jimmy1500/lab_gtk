@@ -10,6 +10,12 @@ SET(CXX_THD "-pthread")
 SET(CXX_OPT "-Ofast")
 LIST(APPEND CMAKE_CXX_FLAGS "${CXX_DBG} ${CXX_FLAG} ${CXX_THD} ${CXX_OPT}")
 
+if (MSVC)
+elseif(APPLE)
+else()
+    SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -pedantic -Wextra")
+endif()
+
 FIND_PACKAGE(PkgConfig REQUIRED)
 PKG_CHECK_MODULES(GTK3 REQUIRED gtk+-3.0)
 
