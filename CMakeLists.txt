@@ -26,8 +26,11 @@ INCLUDE_DIRECTORIES(filius/include)
 # Add other flags to the compiler
 ADD_DEFINITIONS(${GTK3_CFLAGS_OTHER})
 
-SET(FILIUS_SRC "filius/src")
-ADD_EXECUTABLE(galc src/main.cpp ${FILIUS_SRC}/Curve.cpp ${FILIUS_SRC}/Simulation.cpp ${FILIUS_SRC}/G2PP.cpp)
+SET(FILIUS_SRC filius/src)
+SET(CURVE_SRC ${FILIUS_SRC}/Curve.cpp)
+SET(SIM_SRC ${FILIUS_SRC}/Simulation.cpp)
+SET(G2PP_SRC ${FILIUS_SRC}/G2PP.cpp)
+ADD_EXECUTABLE(galc src/main.cpp ${CURVE_SRC} ${SIM_SRC} ${G2PP_SRC})
 
 TARGET_LINK_LIBRARIES(galc ${GTK3_LIBRARIES})
 
