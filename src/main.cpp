@@ -81,6 +81,7 @@ int main (int argc, char **argv)
 {
     GtkBuilder *builder;
     GtkWidget *window;
+    GObject *button;
     GError *error = NULL;
 
     gtk_init (&argc, &argv);
@@ -98,17 +99,17 @@ int main (int argc, char **argv)
     window = (GtkWidget *)gtk_builder_get_object (builder, "window");
     g_signal_connect (window, "destroy", G_CALLBACK (gtk_main_quit), NULL);
 
-    GObject *button_cali = gtk_builder_get_object (builder, "button_calibrate");
-    g_signal_connect (button_cali, "clicked", G_CALLBACK (calibrate), NULL);
+    button = gtk_builder_get_object (builder, "button_calibrate");
+    g_signal_connect (button, "clicked", G_CALLBACK (calibrate), NULL);
 
-    GObject *button_calc = gtk_builder_get_object (builder, "button_calculate");
-    g_signal_connect (button_calc, "clicked", G_CALLBACK (calculate), NULL);
+    button = gtk_builder_get_object (builder, "button_calculate");
+    g_signal_connect (button, "clicked", G_CALLBACK (calculate), NULL);
 
-    GObject *button_reset = gtk_builder_get_object (builder, "button_reset");
-    g_signal_connect (button_reset, "clicked", G_CALLBACK (reset_g2pp), NULL);
+    button = gtk_builder_get_object (builder, "button_reset");
+    g_signal_connect (button, "clicked", G_CALLBACK (reset_g2pp), NULL);
 
-    GObject *button_quit = gtk_builder_get_object (builder, "button_quit");
-    g_signal_connect (button_quit, "clicked", G_CALLBACK (gtk_main_quit), NULL);
+    button = gtk_builder_get_object (builder, "button_quit");
+    g_signal_connect (button, "clicked", G_CALLBACK (gtk_main_quit), NULL);
 
     entry_alpha = (GtkWidget *)gtk_builder_get_object (builder, "entry_alpha");
     entry_beta = (GtkWidget *)gtk_builder_get_object (builder, "entry_beta");
