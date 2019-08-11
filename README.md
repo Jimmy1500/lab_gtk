@@ -21,5 +21,9 @@ git submodule update --init --recursive
 ```
 * compile
 ```
-mkdir -p build && cd build && cmake .. && make build
+mkdir -p build && cd build && cmake .. && make bd
+```
+* run (build/)
+```
+make rn
 ```
