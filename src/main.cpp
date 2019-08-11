@@ -41,7 +41,7 @@ static void configure_g2pp(double a, double b, double s1, double s2, double ro)
         g2pp_ptr->setParameter(G2::SIGMA_2, s2);
         g2pp_ptr->setParameter(G2::RHO, ro);
         g2pp_ptr->setPeriphery(G2::NTERMS, 1);
-        g2pp_ptr->setPeriphery(G2::NPATHS, 7777777);
+        g2pp_ptr->setPeriphery(G2::NPATHS, 977777);
         g2pp_ptr->setPeriphery(G2::NDIMS, 2);
         g2pp_ptr->setPeriphery(G2::NTHREADS, 12);
         g_print ("configuring...Done\n");
@@ -50,8 +50,8 @@ static void configure_g2pp(double a, double b, double s1, double s2, double ro)
 static void reset_g2pp() {
     g_print ("resetting...\n");
     g2pp_ptr->clearSimulation();
-    char result_buffer[2];
-    snprintf(result_buffer, sizeof(result_buffer), "%d", 0);
+    char result_buffer[1];
+    snprintf(result_buffer, sizeof(result_buffer), "%s", "");
     gtk_entry_set_text(GTK_ENTRY(entry_zcbp), result_buffer);
     g_print ("resetting...Done\n");
 }
@@ -78,9 +78,6 @@ static void do_calculate (GtkWidget *widget, gpointer data) {
 
 int main (int argc, char **argv)
 {
-
-    initiate_g2pp();
-
     GtkBuilder *builder;
     GtkWidget *window;
     GError *error = NULL;
@@ -123,6 +120,8 @@ int main (int argc, char **argv)
     entry_mat = (GtkWidget *)gtk_builder_get_object (builder, "entry_mat");
 
     gtk_widget_show_all (window);
+
+    initiate_g2pp();
     gtk_main ();
 
     terminate_g2pp();
